@@ -3,7 +3,7 @@
 <html lang="en">
    <head>
       <title>BillSplit v0</title>
-      <meta charset="utf-8">
+
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
       <link href='/css/styles.css' rel='stylesheet'>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
