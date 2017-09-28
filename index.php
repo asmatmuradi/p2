@@ -36,14 +36,14 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="Split_How_Many_Way?">Split How Many Way?</label>
           <div class="col-md-10">
-            <input id="nSplit_How_Many_Way?" name="Split_How_Many_Way?" type="number" class="form-control input-md">
+            <input id="Split_How_Many_Way?" name="Split_How_Many_Way?" type="number" class="form-control input-md">
 
           </div>
         </div>
 
         <!-- Multiple Radios -->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="radios">Service Tip</label>
+          <label class="col-md-4" for="radios">Service Tip</label>
           <div class="col-md-4">
             <div class="radio">
               <label for="radios-0">
