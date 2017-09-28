@@ -1,37 +1,42 @@
 <?php
+require('Bill.php');
+require('Form.php');
 
-if (isset($_GET['submit']) and ! empty($_GET['submit'])) {
-$tabAmount =$_GET['tabAmount'];
-$splitCount =$_GET['numberOfSplits'];
-$tip =$_GET['tip'];
+use Billsplitter\Bill;
+use DWA\Form;
 
-//calculate discount
-$discountType=$_GET['discount'];
-if ($discountType == 'EmployeeDiscount - 10%'){
-  $tabAmount = $tabAmount - ($tabAmount * 0.10);
-} elseif ($discountType== 'StudentDiscount - 5%'){
-  $tabAmount = $tabAmount - ($tabAmount * 0.05);
-}elseif ($discountType=='SeniorCitizenDiscount - 7%'){
-  $tabAmount = $tabAmount - ($tabAmount * 0.07);
-}
-//check the tip method and convert to dollor amount if its by %
-//if (isset($_GET['submit']) and ! empty($_GET['submit'])) {
-    if (isset($_GET['tipBy'])) {
-        $tip = $_GET['tipBy'];
-        if ($tip =='By %'){
-        $tipAmount=  ($tabAmount * $tip)/100;
+$form = new Form($_GET);
 
-      }else {
-        $tipAmount = $tip;
-      };
-    }else {
-      $tipAmount = 0;
+$bill = new Bill();
+
+#Retrieve date from the form
+$tabAmount  = $form->get('Total_Tab','');
+$splitCount = $form->get('Split_How_Many_Way?','');
+$discount   = $form->get('Discount','');
+$tip        = $form->get('radioValue','');
+
+#validtion
+if($form->isSubmitted()){
+  $errors = $form->validate([
+    'Total_Tab'=>'required',
+    'Total_Tab'=>'min:0',
+    'Split_How_Many_Way?' => 'required',
+    'Split_How_Many_Way?'=>'min:0'
+  ]);
+
+  #Do calculation only if there are no errors
+if(empty($errors)){
+
+#apply discount to tab amount
+$tabAmount = $tabAmount - ($tabAmount * $discount);
+
+#get tip value from method
+    if (isset($tip)) {
+      $tipAmount= $bill->getTip($_GET['radios'], $tip,$tabAmount);
     }
 
-/*} else {
-
-}
-*/
-$tabTotal = tabAmount+tipAmount;
+//calculate final result
+$tabTotal = $tabAmount+$tipAmount;
 $tabForEachWay = $tabTotal/$splitCount;
+}
 }
