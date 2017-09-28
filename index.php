@@ -34,7 +34,7 @@
 
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="Split_How_Many Way?">Split How Many Way?</label>
+          <label class="col-md-4 control-label" for="Split_How_Many_Way?">Split How Many Way?</label>
           <div class="col-md-10">
             <input id="nSplit_How_Many_Way?" name="Split_How_Many_Way?" type="number" class="form-control input-md">
 
@@ -43,17 +43,17 @@
 
         <!-- Multiple Radios -->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="radios">Service Tip</label></label>
+          <label class="col-md-4 control-label" for="radios">Service Tip</label>
           <div class="col-md-4">
             <div class="radio">
               <label for="radios-0">
-           <input type="radio" name="radios" id="radios-0" value=1 checked="checked">
+           <input type="radio" name="radios" id="radios" value=1 checked="checked">
            By %
          </label>
             </div>
             <div class="radio">
               <label for="radios-1">
-           <input type="radio" name="radios" id="radios-1" value=2>
+           <input type="radio" name="radios" id="radios" value=2>
            By $
          </label>
             </div>
@@ -98,6 +98,7 @@
   <?php elseif (!empty($tabForEachWay)) :?>
     <div class="alert alert-success text-center col-md-10">
       <h4>  $<?=number_format($form->sanitize($tabForEachWay), 2)?> Each Way</h4>
+    </div>
       <?php endif; ?>
     </div>
   </div>
