@@ -21,7 +21,8 @@ if($form->isSubmitted()){
     'Total_Tab'=>'required',
     'Total_Tab'=>'min:0',
     'Split_How_Many_Way?' => 'required',
-    'Split_How_Many_Way?'=>'min:0'
+    'Split_How_Many_Way?'=>'min:0',
+    'radioValue'=>'min:0'
   ]);
 
   #Do calculation only if there are no errors
