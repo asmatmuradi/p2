@@ -43,17 +43,17 @@
 
         <!-- Multiple Radios -->
         <div class="form-group">
-          <label class="col-md-4" for="radios">Service Tip</label>
+          <label class="col-md-4" for="radios-0 radios-1">Service Tip</label>
           <div class="col-md-4">
             <div class="radio">
               <label for="radios-0">
-           <input type="radio" name="radios" id="radios" value=1 checked="checked">
+           <input type="radio" name="radios" id="radios-0" value=1 checked="checked">
            By %
          </label>
             </div>
             <div class="radio">
               <label for="radios-1">
-           <input type="radio" name="radios" id="radios" value=2>
+           <input type="radio" name="radios" id="radios-1" value=2>
            By $
          </label>
             </div>
